@@ -1,0 +1,17 @@
+.task-card{
+   display: inline-block; 
+   background-color: aliceblue;
+   border-radius: 6px;
+   align-items: flex-start;
+   flex-direction: column;
+   margin :5px;
+  border: 2px solid #d3e7a9;
+}
+
+.task-card,h1,p{
+    padding: 0px;
+}
+.task-card button{
+    padding: 0px;
+    margin:13px;
+}

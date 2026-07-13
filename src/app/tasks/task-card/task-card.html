@@ -1,0 +1,9 @@
+<div class="task-card" [routerLink]="['/taskDetail',taskCard().id]">
+    <button (click)="dleteCard()">Delete</button>
+  <h1>Title:{{ taskCard().title }}</h1>
+  <h1>ID:{{ taskCard().id }}</h1>
+  <p>Description:{{ taskCard().description }}</p>
+  <p>Priority:{{ taskCard().priority }}</p>
+  <p>Status:{{ taskCard().status }}</p>
+  <button (click)="markAsDone()">Mark as Done.</button>
+</div>

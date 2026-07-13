@@ -1,0 +1,44 @@
+<div>
+    <button (click) = "addTask()"> Add task</button>
+</div>
+
+<div>
+    <h1>Total:{{totalCount()}} | Pending: {{pending()}} | Done:{{done()}} </h1>
+</div>
+
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" [hidden] = "formHide()">
+    <div>
+        <label for="title">Task Title</label>
+        <input type="text" id="title" placeholder="Task title..." formControlName="taskTitle">
+    </div>
+
+     <div>
+        <label for="desc">Description</label>
+        <input type="text" id="desc" placeholder="Description..." formControlName="description">
+    </div>
+
+    <div>
+        <label for="status">Status</label>
+        <select id="status" formControlName="status">
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+
+    <div>
+    <button type="submit">Save Task</button>   
+  </div>
+</form>
+
+
+@if(tasks().length>0){
+<div>
+    @for(task of tasks(); track task.id){
+<app-task-card [taskCard]="task"></app-task-card>
+    }
+</div>
+}@else {
+<p>No tasks yet!!!!. Click Add task.</p>
+}
+

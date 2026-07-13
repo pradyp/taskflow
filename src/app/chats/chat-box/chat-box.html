@@ -1,0 +1,22 @@
+
+
+<div class="messages">
+    @for(chats of msgs(); track chats.id){
+        @if(chats.sender === 'user'){
+
+            <div class="user-message">
+                <p>{{chats.text}}</p>
+            </div>
+
+        } @else {
+            <div class="bot-message">
+                <p>{{chats.text}}</p>
+            </div>
+        }
+    }
+
+</div>
+
+
+<input #inputval type="text" placeholder="Type your message here ..." (keydown.enter)="inputValue(inputval)">
+
